@@ -1,3 +1,4 @@
+//v.2.1
 getCookie();
 var userBet ='';
 var points = this.cookies[1]; //punkty początkowe gracza
