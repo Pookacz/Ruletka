@@ -1,0 +1,15 @@
+# Changelog Ruletka by Pooki 2020
+
+## v.1.0
+### no information
+## v.2.0
+### Added
+1) Dodanie skryptu dzięki, któremu losowanie ruletki odbywa się cały czas co 15 sekund.
+2) Trzy przyciski dzięki, którym można obstawić do losowania
+3) Przycisk usuwania wartości z inputu
+4) Przyciski mnożenia wartości z inputu (x2), (x4), (x8)
+###Removed
+1) Rozpoczynanie losowania ruletki poprzez przycisk obstawiania zakładu.
+## v.2.1
+### Added
+1) Zostały dodane ciasteczka dzięki czemu punkty gracza po odświeżeniu strony się nie resetują 

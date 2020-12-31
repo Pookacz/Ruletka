@@ -1,9 +1,49 @@
-
+getCookie();
 var userBet ='';
-var points = 1000; //punkty początkowe gracza
+var points = this.cookies[1]; //punkty początkowe gracza
 var ruletteId = 1; //Id losowania
 
+//Ustalanie punktów gracza na podstawie punktów
+    if(points === undefined){ //jeśli brak ciasteczek to wartość równa 1000
+        points = 1000;
+    }else{
+        points = parseFloat(this.cookies[1]);
+    }
+    document.getElementById("points").innerHTML = this.points;
+
 timer();
+
+//funkcja tworzenia ciasteczek
+function setCookie(name, value, days){
+
+    if(!navigator.cookieEnabled) return;
+
+    var e = encodeURIComponent;
+
+    var cookie = e(name) + "=" + e(value);
+
+    if(typeof days === "number"){
+        var date = new Date();
+        date.setTime(date.getTime() + days * 1000 * 60 *60 *24);
+        cookie += "; expires" + date.toGMTString();
+    }
+
+    document.cookie = cookie; 
+
+    return cookie[name];
+}
+
+//Funkcja czytania ciasteczek
+function getCookie(){
+    console.log(document.cookie);
+
+    this.cookies = document.cookie.split('=');
+
+    console.log(this.cookies[0]);
+    console.log(this.cookies[1]);
+
+    this.points = parseFloat(this.cookies[1])
+}
 
 function blackBet(){ //obsatwienie czarnego
     if(pointsBet.value > 0){
@@ -126,6 +166,7 @@ setInterval(function(){
         }
         userBet ='';
     }
+    setCookie("points", points, 100);
     // Włączanie przycisków po losowaniu
     greenButton.removeAttribute("disabled");
     redButton.removeAttribute("disabled");
@@ -209,7 +250,3 @@ function timer(){
         document.getElementById("result").innerHTML = "Losowanie...";
     },17000)
 }
-
-
-
-
