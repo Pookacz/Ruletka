@@ -13,3 +13,4 @@
 ## v.2.1
 ### Added
 1) Zostały dodane ciasteczka dzięki czemu punkty gracza po odświeżeniu strony się nie resetują 
+2) Został dodany kod "free100" dający darmowe 100 punktów. Do jednokrotnego wykorzystania (dopóki strona nie zostanie zapisana, trzeba dodać ciasteczka);

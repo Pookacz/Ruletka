@@ -1,8 +1,8 @@
-//v.2.1
 getCookie();
 var userBet ='';
 var points = this.cookies[1]; //punkty początkowe gracza
 var ruletteId = 1; //Id losowania
+var chance = 1; //możliwość wykorzystania kodu
 
 //Ustalanie punktów gracza na podstawie punktów
     if(points === undefined){ //jeśli brak ciasteczek to wartość równa 1000
@@ -13,6 +13,19 @@ var ruletteId = 1; //Id losowania
     document.getElementById("points").innerHTML = this.points;
 
 timer();
+
+function addPoints(){
+    //sprawdzenie czy użytkownik może wykorzystać kod
+    if(chance > 0){
+        if(add.value == "free100"){
+            this.points = this.points + 100;
+            document.getElementById("points").innerHTML = points;
+            setCookie("points", points, 100);
+            chance = chance - 1;
+        } 
+    }
+    
+}
 
 //funkcja tworzenia ciasteczek
 function setCookie(name, value, days){
@@ -58,6 +71,8 @@ function blackBet(){ //obsatwienie czarnego
             greenButton.setAttribute("disabled", true);
             blackButton.setAttribute("disabled", true);
             redButton.setAttribute("disabled", true);
+
+            setCookie("points", points, 100);
         }else{
             console.log("Masz za mało punktów!");
             document.getElementById("result").innerHTML = "Masz za mało punktów";
@@ -80,6 +95,8 @@ function redBet(){ //obstawienie czerwonego
             greenButton.setAttribute("disabled", true);
             blackButton.setAttribute("disabled", true);
             redButton.setAttribute("disabled", true);
+
+            setCookie("points", points, 100);
         }else{
             console.log("Masz za mało punktów!");
             document.getElementById("result").innerHTML = "Masz za mało punktów";
@@ -101,6 +118,8 @@ function greenBet(){ //obstawienie zielonego
             greenButton.setAttribute("disabled", true);
             blackButton.setAttribute("disabled", true);
             redButton.setAttribute("disabled", true);
+
+            setCookie("points", points, 100);
         }else{
             console.log("Masz za mało punktów!");
             document.getElementById("result").innerHTML = "Masz za mało punktów";
