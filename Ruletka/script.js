@@ -1,18 +1,21 @@
-getCookie();
+getCookie(); //pobieranie ciasteczek
 var userBet ='';
 var points = this.cookies[1]; //punkty początkowe gracza
 var ruletteId = 1; //Id losowania
 var chance = 1; //możliwość wykorzystania kodu
 
-//Ustalanie punktów gracza na podstawie punktów
+//Ustalanie punktów gracza na podstawie Ciasteczek
     if(points === undefined){ //jeśli brak ciasteczek to wartość równa 1000
         points = 1000;
     }else{
+        //zamiana ciasteczek na number oraz wczytanie ich jako zmienną points
         points = parseFloat(this.cookies[1]);
     }
+    
     document.getElementById("points").innerHTML = this.points;
-
+//uruchomienie funkcji odliczania do kolejnego losowania
 timer();
+
 //dodawanie punktów raz na 60 sekund
 setInterval(function(){
     document.getElementById("pointsAdded").innerHTML = "+10";
@@ -22,7 +25,8 @@ setInterval(function(){
         document.getElementById("pointsAdded").innerHTML = "";
     },5000)
 },60000);
-//dodawanie punktów poprzez kod
+
+//dodawanie punktów poprzez kod "free100"
 function addPoints(){
     //sprawdzenie czy użytkownik może wykorzystać kod
     if(add.value == "free100"){
@@ -32,17 +36,22 @@ function addPoints(){
             setCookie("points", points, 100);
             chance = chance - 1;
             document.getElementById("pointsAdded").innerHTML = "+100";
-            add.value = '';
+            add.value = "kod";
             setTimeout(function(){
                 document.getElementById("pointsAdded").innerHTML = "";
             },5000);
-        } else{
+        }else{
             document.getElementById("pointsAdded").innerHTML = "Kod został już wykorzystany";
-            add.value = '';
+            add.value = "kod";
             setTimeout(function(){
                 document.getElementById("pointsAdded").innerHTML = "";
             },5000);
         }
+    } else if(add.value !== "free100"){
+        document.getElementById("pointsAdded").innerHTML = "Błędny kod";
+        setTimeout(function(){
+            document.getElementById("pointsAdded").innerHTML = "";
+        },5000)
     } else{
         document.getElementById("pointsAdded").innerHTML = "Żaden kod nie został wpisany";
         setTimeout(function(){
