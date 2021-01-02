@@ -13,16 +13,41 @@ var chance = 1; //możliwość wykorzystania kodu
     document.getElementById("points").innerHTML = this.points;
 
 timer();
-
+//dodawanie punktów raz na 60 sekund
+setInterval(function(){
+    document.getElementById("pointsAdded").innerHTML = "+10";
+    this.points = this.points + 10;
+    document.getElementById("points").innerHTML = points;
+    setTimeout(function(){
+        document.getElementById("pointsAdded").innerHTML = "";
+    },5000)
+},60000);
+//dodawanie punktów poprzez kod
 function addPoints(){
     //sprawdzenie czy użytkownik może wykorzystać kod
-    if(chance > 0){
-        if(add.value == "free100"){
+    if(add.value == "free100"){
+        if(chance > 0 ){
             this.points = this.points + 100;
             document.getElementById("points").innerHTML = points;
             setCookie("points", points, 100);
             chance = chance - 1;
-        } 
+            document.getElementById("pointsAdded").innerHTML = "+100";
+            add.value = '';
+            setTimeout(function(){
+                document.getElementById("pointsAdded").innerHTML = "";
+            },5000);
+        } else{
+            document.getElementById("pointsAdded").innerHTML = "Kod został już wykorzystany";
+            add.value = '';
+            setTimeout(function(){
+                document.getElementById("pointsAdded").innerHTML = "";
+            },5000);
+        }
+    } else{
+        document.getElementById("pointsAdded").innerHTML = "Żaden kod nie został wpisany";
+        setTimeout(function(){
+            document.getElementById("pointsAdded").innerHTML = "";
+        },5000)
     }
     
 }
