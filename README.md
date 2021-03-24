@@ -1,28 +1,25 @@
-# Ruletka by Pooki
+# Roulette
 
-### Zasady
-1. Co 15 sekund odbywa się losowanie wygranego koloru. Gracz może obstawić jeden z trzech kolorów (czerwony, zielony, czarny). 
-2. Szansa na wygraną zależy od wybranego koloru: czerwony(18/37), czarny(18/37), zielony(1/37).
-3. Kurs wygranej również zależy od koloru: czerwony (x2), czarny(x2), zielony(x12).
-4. Gracz może obstawić tylko jeden kolor w trakcie jednego losowania.
-5. Gracz sam ustala kwotę jaką chcę obstawić w danym zakładzie.
-6. Gracz nie musi brać udziału w każdym losowaniu. Nie wzięcie udziału nie wiąże się z żadnymi konsekwencjami.
-7. Jeśli gracz wygra po losowaniu na konto gracza zwracana jest odpowiednia kwota.
-8. Punkty restartują się po odświeżeniu strony.
+### Rules
+1. Player can bet on one color (red, black, green) every 15 seconds.
+2. Color winning chance:
+  - red 18/37
+  - black 18/37
+  - green 1/37
+3. Wining price depends on color:
+  - red x2
+  - black x2
+  - green x12
+4. Player don't have to participate in every game.
+5. If Player wins the appropriate amount will return to player's account
+6. Points are saving by cookies.
 
-## Ilość graczy
-Gra jest jednoosobowa 
+## Amount of players
+Single player
 
-## Użyte Technologie
-### HTML
-Projekt strony
-### CSS
-Graficzna część strony
-### JavaScript
-Cały skrypt ruletki
-
-Całe skrypty zakładów oraz ich wartości
-
-Funkcjonalności przycisków
+## Technologies used
+- HTML
+- CSS
+- JavaScript
 
 
