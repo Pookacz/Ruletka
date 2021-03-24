@@ -13,6 +13,7 @@
 4. Player don't have to participate in every game.
 5. If Player wins the appropriate amount will return to player's account
 6. Points are saving by cookies.
+7. You can add points with code: "free150"
 
 ## Amount of players
 Single player
